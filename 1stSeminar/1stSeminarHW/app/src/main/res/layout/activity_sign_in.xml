@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".SignInActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <ImageView
+            android:id="@+id/iv_sopt_logo_signin"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:paddingHorizontal="70dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/sopt_logo" />
+
+        <EditText
+            android:id="@+id/et_id_signin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_sopt_logo_signin"
+            android:background="#E8E9E8"
+            android:inputType="textEmailAddress"
+            android:hint="이메일"
+            android:layout_marginHorizontal="40dp"
+            android:padding="8dp" />
+
+        <EditText
+            android:id="@+id/et_password_signin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_id_signin"
+            android:layout_marginTop="10dp"
+            android:background="#E8E9E8"
+            android:hint="비밀번호"
+            android:layout_marginHorizontal="40dp"
+            android:inputType="textPassword"
+            android:padding="8dp" />
+
+        <Button
+            android:id="@+id/btn_login_signin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_password_signin"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#002399"
+            android:text="로그인"
+            android:textColor="@android:color/white" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_login_signin"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="아직 회원이 아니신가요?" />
+
+            <LinearLayout
+                android:id="@+id/tv_signup_signin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="회원가입하기" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="#E8E9E8" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
