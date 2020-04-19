@@ -1,5 +1,5 @@
 # 1st Seminar Assignment
-<img alt="1차 세미나 과제 화면 플로우" src="https://user-images.githubusercontent.com/38368820/79682052-2ead5380-825a-11ea-9f11-78cd2e4ba643.png">
+<img alt="1차 세미나 과제 화면 플로우" src="https://user-images.githubusercontent.com/38368820/79688897-5cab8b80-828c-11ea-9b1d-2627eb60c434.png">
 
 ### 기본 1. ConstraintLayout 심화 학습
 
