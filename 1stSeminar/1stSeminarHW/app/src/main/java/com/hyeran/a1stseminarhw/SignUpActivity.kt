@@ -35,7 +35,13 @@ class SignUpActivity : AppCompatActivity() {
                 intent.putExtra("password", password)
                 intent.putExtra("nickname", nickname)
 
+                SharedPreferenceController.let {
+                    it.setEmail(this, email)
+                    it.setPassword(this, password)
+                }
+
                 setResult(SIGNUP_SUCCESS, intent)
+                Toast.makeText(this, "회원가입 성공!", Toast.LENGTH_SHORT).show()
                 finish()
             }
         }

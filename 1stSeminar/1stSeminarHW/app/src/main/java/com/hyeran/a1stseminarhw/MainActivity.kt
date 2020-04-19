@@ -3,6 +3,7 @@ package com.hyeran.a1stseminarhw
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -20,7 +21,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         btn_basic2_main.setOnClickListener {
-            startActivity(Intent(this, SignInActivity::class.java))
+            if(SharedPreferenceController.getAutoLoginFlag(this)) {
+                Toast.makeText(this, "자동 로그인된 상태입니다.", Toast.LENGTH_SHORT).show()
+            }
+            else {
+                startActivity(Intent(this, SignInActivity::class.java))
+            }
         }
     }
 }
