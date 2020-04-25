@@ -24,6 +24,13 @@ object SharedPreferenceController {
         return preferences.getString(EMAIL, "")!!
     }
 
+    fun removeEmail(ctx : Context) {
+        val preferences : SharedPreferences = ctx.getSharedPreferences(EMAIL, Context.MODE_PRIVATE)
+        val editor : SharedPreferences.Editor = preferences.edit()
+        editor.remove(EMAIL)
+        editor.commit()
+    }
+
     /**
      * Password
      * String
@@ -40,6 +47,13 @@ object SharedPreferenceController {
         return preferences.getString(PASSWORD, "")!!
     }
 
+    fun removePassword(ctx : Context) {
+        val preferences : SharedPreferences = ctx.getSharedPreferences(PASSWORD, Context.MODE_PRIVATE)
+        val editor : SharedPreferences.Editor = preferences.edit()
+        editor.remove(PASSWORD)
+        editor.commit()
+    }
+
     /**
      * Auto Login Flag
      * Boolean
@@ -54,5 +68,12 @@ object SharedPreferenceController {
     fun getAutoLoginFlag(ctx : Context) : Boolean {
         val preferences : SharedPreferences = ctx.getSharedPreferences(AUTO_LOGIN_FLAG, Context.MODE_PRIVATE)
         return preferences.getBoolean(AUTO_LOGIN_FLAG, false)
+    }
+
+    fun removeAutoLoginFlag(ctx : Context) {
+        val preferences : SharedPreferences = ctx.getSharedPreferences(AUTO_LOGIN_FLAG, Context.MODE_PRIVATE)
+        val editor : SharedPreferences.Editor = preferences.edit()
+        editor.remove(AUTO_LOGIN_FLAG)
+        editor.commit()
     }
 }
