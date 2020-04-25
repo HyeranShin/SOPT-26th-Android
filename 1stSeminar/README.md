@@ -51,7 +51,8 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 <br/>
 
 ### 성장 2. 자동 로그인 구현
-SharedPreferences 사용<br/>
+[SharedPreferences](https://developer.android.com/training/data-storage/shared-preferences)<br/>
+간단한 데이터를 저장하기 앱 내 파일 형태로 저장
 1. Controller 파일 작성
 ```kotlin
 object SharedPreferenceController {
