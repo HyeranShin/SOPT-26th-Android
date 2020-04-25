@@ -19,7 +19,7 @@
 ### 기본 2. 회원가입 및 로그인 기능 구현
 1. startActivityForResult()로 Activity 호출하기
 ```kotlin
-startActivityForResult(intent, REQUEST_TEST);
+startActivityForResult(Intent(this, NextActivity::class.java), REQUEST_TEST);
 ```
 
 2. 호출된 Activity에서 setResult()로 결과 돌려주기
@@ -58,27 +58,38 @@ object SharedPreferenceController {
     private val KEY : String = "key"
 
     /**
-     * KEY
+     * Key
      * String
      */
-    fun setKEY(ctx: Context, input: String) {
+    fun putKey(ctx: Context, input: String) {
         val preferences : SharedPreferences = ctx.getSharedPreferences(KEY, Context.MODE_PRIVATE)
         val editor : SharedPreferences.Editor = preferences.edit()
         editor.putString(KEY, input)
         editor.commit()
     }
 
-    fun getKEY(ctx : Context) : String {
+    fun getKey(ctx : Context) : String {
         val preferences : SharedPreferences = ctx.getSharedPreferences(KEY, Context.MODE_PRIVATE)
         return preferences.getString(KEY, "")!!
+    }
+    
+    fun removeKey(ctx : Context) {
+        val preferences : SharedPreferences = ctx.getSharedPreferences(KEY, Context.MODE_PRIVATE)
+        val editor : SharedPreferences.Editor = preferences.edit()
+        editor.remove(KEY)
+        editor.commit()
     }
 }
 ```
 2. 데이터 저장 
 ```kotlin
-SharedPreferenceController.setKEY(this, "key value")
+SharedPreferenceController.putKey(this, "key value")
 ```
 3. 데이터 조회
 ```kotlin
-SharedPreferenceController.getKEY(this)
+SharedPreferenceController.getKey(this)
+```
+4. 데이터 삭제
+```kotlin
+SharedPreferenceController.removeKey(this)
 ```
