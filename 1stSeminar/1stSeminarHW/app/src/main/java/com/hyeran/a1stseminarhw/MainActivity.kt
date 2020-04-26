@@ -31,8 +31,6 @@ class MainActivity : AppCompatActivity() {
 
         tv_autologin_cancel.setOnClickListener {
             SharedPreferenceController.removeAutoLoginFlag(this)
-            SharedPreferenceController.removeEmail(this)
-            SharedPreferenceController.removePassword(this)
             Toast.makeText(this, "자동 로그인이 해제되었습니다.", Toast.LENGTH_SHORT).show()
         }
     }
