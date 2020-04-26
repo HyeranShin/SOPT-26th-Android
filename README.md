@@ -1,6 +1,5 @@
 # 📌 SOPT 26th Android Seminar 🤳🏻📱
-
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　 `👇🏻click icon👇🏻`
+세미나 내용과 과제, 스스로 알아본 내용을 정리하는 저장소 👩🏻‍💻 　　　　　　　　 　　　　　 `👇🏻click emoji👇🏻`
 ||내용|날짜|자료|정리|과제|
 |---|---|:---:|:---:|:---:|---|
 |**1차 보충 세미나**|Kotlin 기초|20.04.18|[📊](https://github.com/HyeranShin/SOPT-26th-Android/blob/master/1stSeminar/1차%20보충%20세미나.pdf)|[✏️](#1차-보충-세미나-정리)|-|20.04.18|
@@ -166,9 +165,10 @@ lateinit var name: String //변수 name을 나중에 초기화하겠다
 <br/>
 
 ## 1차 세미나 과제
-<img alt="1차 세미나 과제 화면 플로우" src="https://user-images.githubusercontent.com/38368820/79688897-5cab8b80-828c-11ea-9b1d-2627eb60c434.png">
 
-### 기본 1️⃣ ConstraintLayout 심화 학습
+### 기본 1️⃣ ConstraintLayout 심화 학습 
+<img width="290dp" height=auto alt="1차 세미나 과제 - 기본 1" src="https://user-images.githubusercontent.com/38368820/80300530-8dce1380-87d8-11ea-957a-f618caec0247.png">
+
 #### Constraint Dimension Ratio [🔗](https://constraintlayout.com/basics/dimensions.html)
 원하는 비율로 자동으로 크기 조절
 ```xml
@@ -179,7 +179,10 @@ lateinit var name: String //변수 name을 나중에 초기화하겠다
         .../>
 ```
 
-### 기본 2️⃣ 회원가입 및 로그인 기능 구현
+### 기본 2️⃣ 회원가입 및 로그인 기능 구현 & 성장 2️⃣ 자동 로그인 구현
+<img src="https://user-images.githubusercontent.com/38368820/80303320-75ff8b00-87ea-11ea-8eb2-fd2392ba7ac6.png">
+
+#### startActivityForResult, intent.putExtra
 1. startActivityForResult()로 Activity 호출하기
 ```kotlin
 startActivityForResult(Intent(this, NextActivity::class.java), REQUEST_TEST);
@@ -211,9 +214,8 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 }
 ```
 
-### 성장 2️⃣ 자동 로그인 구현
 #### SharedPreferences [🔗](https://developer.android.com/training/data-storage/shared-preferences)<br/>
-간단한 데이터를 저장하기 앱 내 파일 형태로 저장
+간단한 데이터를 저장하기 위해 앱 내 파일 형태로 저장
 1. Controller 파일 작성
 ```kotlin
 object SharedPreferenceController {
