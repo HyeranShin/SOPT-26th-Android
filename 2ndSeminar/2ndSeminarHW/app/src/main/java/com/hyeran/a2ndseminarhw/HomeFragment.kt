@@ -26,6 +26,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         instaAdapter = InstaAdapter(view.context)
+        rv_home.addItemDecoration(ItemDecoration(context!!))
         rv_home.adapter = instaAdapter //리사이클러뷰의 어댑터를 instaAdapter로 지정
         loadDatas() //데이터를 임의로 생성하고 어댑터에 전달
     }
