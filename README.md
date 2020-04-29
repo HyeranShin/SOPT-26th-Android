@@ -1,16 +1,16 @@
 # 📌 SOPT 26th Android Seminar 🤳🏻📱
-세미나 내용과 과제, 스스로 알아본 내용을 정리하는 저장소 👩🏻‍💻 　　　　　　　　 　　　　　 `👇🏻click emoji👇🏻`
+세미나 내용과 과제, 스스로 알아본 내용을 정리하는 저장소 👩🏻‍💻 　　　　　　　　 　　　　　`👇🏻click emoji👇🏻`
 ||내용|날짜|자료|정리|과제|
 |---|---|:---:|:---:|:---:|---|
 |**1차 보충 세미나**|Kotlin 기초|20.04.18|[📊](https://github.com/HyeranShin/SOPT-26th-Android/blob/master/1stSeminar/1차%20보충%20세미나.pdf)|[✏️](#1차-보충-세미나-정리)|-|20.04.18|
-|**1차 세미나**|각종 레이아웃의 활용, 로그인과 회원가입 화면 완성|20.04.18|[📊](https://github.com/HyeranShin/SOPT-26th-Android/blob/master/1stSeminar/1차%20세미나%20-%20각종%20레이아웃의%20활용.pdf)|[✏️](#1차-세미나-정리)|[🏠](#1차-세미나-과제)|
-|**2차 세미나**|Bottom Navigation, ViewPager, RecyclerView|20.04.25|[📊](https://github.com/HyeranShin/SOPT-26th-Android/blob/master/2ndSeminar/2차%20세미나%20-%20Bottom%20Navigation%2C%20ViewPager%2C%20RecyclerView.pdf)|[✏️](#2차-세미나-정리)|[🏠](#2차-세미나-과제)|
-|**3차 세미나**|Open API를 이용한 Retrofit2||[📊]()|[✏️](#3차-세미나-정리)|[🏠](#3차-세미나-과제)||
-|**4차 세미나**|자주 쓰이는 기능들에 대하여||[📊]()|[✏️](#4차-세미나-정리)|[🏠](#4차-세미나-과제)||
-|**5차 세미나**|디자인 합동 세미나||[📊]()|[✏️](#5차-세미나-정리)|[🏠](#5차-세미나-과제)||
-|**6차 세미나**|ViewPager, Fragment, TabLayout 등의 연동||[📊]()|[✏️](#6차-세미나-정리)|[🏠](#6차-세미나-과제)||
-|**7차 세미나**|서버 합동 세미나||[📊]()|[✏️](#7차-세미나-정리)|[🏠](#7차-세미나-과제)||
-|**8차 세미나**|Firebase 연동||[📊]()|[✏️](#8차-세미나-정리)|[🏠](#8차-세미나-과제)||
+|**1차 세미나**|각종 레이아웃의 활용, 로그인과 회원가입 화면 완성|20.04.18|[📊](https://github.com/HyeranShin/SOPT-26th-Android/blob/master/1stSeminar/1차%20세미나%20-%20각종%20레이아웃의%20활용.pdf)|[](#1차-세미나-정리)|[🏠](#1차-세미나-과제)|
+|**2차 세미나**|Bottom Navigation, ViewPager, RecyclerView|20.04.25|[📊](https://github.com/HyeranShin/SOPT-26th-Android/blob/master/2ndSeminar/2차%20세미나%20-%20Bottom%20Navigation%2C%20ViewPager%2C%20RecyclerView.pdf)|[](#2차-세미나-정리)|[🏠](#2차-세미나-과제)|
+|**3차 세미나**|Open API를 이용한 Retrofit2||[]()|[](#3차-세미나-정리)|[](#3차-세미나-과제)||
+|**4차 세미나**|자주 쓰이는 기능들에 대하여||[]()|[](#4차-세미나-정리)|[](#4차-세미나-과제)||
+|**5차 세미나**|디자인 합동 세미나||[]()|[](#5차-세미나-정리)|[](#5차-세미나-과제)||
+|**6차 세미나**|ViewPager, Fragment, TabLayout 등의 연동||[]()|[](#6차-세미나-정리)|[](#6차-세미나-과제)||
+|**7차 세미나**|서버 합동 세미나||[]()|[](#7차-세미나-정리)|[](#7차-세미나-과제)||
+|**8차 세미나**|Firebase 연동||[]()|[](#8차-세미나-정리)|[](#8차-세미나-과제)||
 
 자료 제작 & 진행: [@CHJUNE-android](https://github.com/CHJUNE-android)
 
@@ -264,56 +264,34 @@ SharedPreferenceController.removeKey(this)
 ### 1. 라이브러리
 - 재사용의 가치가 있는 코드들을 다른 사람(또는 본인)이 작성해놓은 것
 - build.gradle의 Dependencies 안에 라이브러리 코드 추가
-```gradle
-//제일 상단에 추가
-apply plugin: 'kotlin-kapt'
-
-//리사이클러뷰
-implementation 'androidx.recyclerview:recyclerview:1.1.0'
-
-//material 디자인 라이브러리 (BottomNavigation 등 구글에서 제공하는 디자인 라이브러리)
-implementation "com.google.android.material:material:1.2.0-alpha05"
-
-//이미지 로딩 라이브러리 : glide (이미지 url을 로딩시켜 뷰에 연결해주는 라이브러리)
-implementation "com.github.bumptech.glide:glide:4.10.0" 
-kapt "com.github.bumptech.glide:compiler:4.10.0"
-
-//동그란 이미지 커스텀 뷰 라이브러리 : https://github.com/hdodenhof/CircleImageView 
-implementation 'de.hdodenhof:circleimageview:3.1.0'
-```
-
-### 2. Bottom Navigation과 ViewPager
-#### 상단 바 커스텀 UI 적용하기
-values - styles에 NoActionBar 상속 후 MainActivity 부모 레이아웃 자식으로 아래 코드 작성
-```xml
-<com.google.android.material.appbar.AppBarLayout
-  android:id="@+id/appBarLayout" 
-  android:layout_width="match_parent" android:layout_height="wrap_content" 
-  app:layout_constraintTop_toTopOf="parent">
-  
-  <androidx.appcompat.widget.Toolbar
-    android:id="@+id/main_toolbar" 
-    android:layout_width="match_parent" 
-    android:layout_height="wrap_content" 
-    android:background="@color/colorPrimary"> 
-    <TextView
-      android:textSize="18sp" 
-      android:textStyle="bold" 
-      android:layout_width="wrap_content" 
-      android:layout_height="wrap_content" 
-      android:text="@string/app_name" 
-      android:textColor="@color/white" 
-      android:gravity="center" android:maxEms="15"/>
-  </androidx.appcompat.widget.Toolbar> 
-</com.google.android.material.appbar.AppBarLayout>
-```
-#### 하단 네비게이션 메뉴 만들기
-
 <br/>
 
 ## 2차 세미나 과제
 ### 기본 1️⃣ Bottom Navigation, ViewPager, RecyclerView 실습
+<img width="290" alt="" src="https://user-images.githubusercontent.com/38368820/80577185-6c239500-8a41-11ea-9192-28a8891d8cb4.gif">
+
 ### 기본 2️⃣ RecyclerView의 itemDecoration, clipToPadding
+<img width="1000" alt="" src="https://user-images.githubusercontent.com/38368820/80575449-93c52e00-8a3e-11ea-8e75-4e3d58cf5b56.png">
+
+#### itemDecoration
+- RecyclerView 내부에 있는 추상 클래스
+- RecyclerView의 아이템을 꾸미는 역할
+1. ItemDecoration 클래스 생성
+```kotlin
+class ItemDecoration(context: Context) : RecyclerView.ItemDecoration() { 
+  //데코레이션 할 코드
+}
+```
+2. 리사이클러뷰에 적용
+```kotlin
+recycelrview.addItemDecoration(ItemDecoration(context))
+```
+#### clipToPadding
+- 리사이클러뷰에 패딩을 적용할 때, 스크롤 시에는 패딩이 없도록
+RecyclerView의 xml 파일 내에 아래 속성 추가
+```xml
+android:clipToPadding="false"
+```
 ### 성장 1️⃣ 네이버 웹툰 뷰
 <br/>
 
