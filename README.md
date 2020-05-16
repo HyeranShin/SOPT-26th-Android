@@ -270,6 +270,22 @@ SharedPreferenceController.removeKey(this)
 ### 기본 1️⃣ Bottom Navigation, ViewPager, RecyclerView 실습
 <img width="290" alt="" src="https://user-images.githubusercontent.com/38368820/80577185-6c239500-8a41-11ea-9192-28a8891d8cb4.gif">
 
+#### scaleType 속성
+- ImageView 영역에 맞게 이미지의 크기를 확대, 축소, 이동 가능
+- default 값은 `fitCenter`
+
+||내용|비율 유지|
+|:---:|---|:---:|
+|**matrix**|Image Matrix를 사용하여 이미지 표시<br/>* Image Maxtrix는 ImageView의 크기에 따라 이미지를 어떠한 형태로 변환하여 표시할 것인지를<br/>지정한 값으로, 개발자가 직접 이미지의 크기 조절, 위치 변경, 원근감 왜곡 등의 효과를 줄 수 있음|지정 가능|
+|**fitXY**|가로(X), 세로(Y) 방향으로 이미지를 확대 또는 축소하여 ImageView의 크기에 가득 채워 표시|❌|
+|**fitStart**|ImageView 영역 내에 모두 표시되도록 확대 또는 축소한 다음 ImageView의 Start(Left, Top)<br/>기준으로 표시|⭕️|
+|**fitCenter**|ImageView 영역 내에 모두 표시되도록 확대 또는 축소한 다음 ImageView의 Center 기준으로 표시|⭕️|
+|**fitEnd**|ImageView 영역 내에 모두 표시되도록 확대 또는 축소한 다음 ImageView의 End(Right, Bottom)<br/>기준으로 표시|⭕️|
+|**center**|이미지의 크기를 확대 또는 축소하지 않고 원본 이미지 그대로 ImageView의 Center 기준으로 표시|⭕️|
+|**centerCrop**|이미지가 ImageView보다 크거나 같게 만든 다음 ImageView의 Center 기준으로 표시<br/>크기 조절 후 ImageView의 크기를 벗어나는 이미지 영역은 잘려나가며(Crop) 화면에 표시되지 않음|⭕️|
+|**centerInside**|ImgeView보다 작거나 같게 만든 다음 ImageView의 Center 기준으로 표시<br/>원본 이미지 크기가 ImageView보다 작은 경우 이미지 크기를 늘리지 않음|⭕️|
+
+
 ### 기본 2️⃣ RecyclerView의 itemDecoration, clipToPadding
 <img width="1000" alt="" src="https://user-images.githubusercontent.com/38368820/80575449-93c52e00-8a3e-11ea-8e75-4e3d58cf5b56.png">
 
