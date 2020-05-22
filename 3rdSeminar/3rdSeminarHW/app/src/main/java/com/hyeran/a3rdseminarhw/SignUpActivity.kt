@@ -46,7 +46,7 @@ class SignUpActivity : AppCompatActivity() {
                         val msg: String = response.body()!!.message
                         Toast.makeText(this@SignUpActivity, msg, Toast.LENGTH_SHORT)
                             .show()
-                        if (response.body()!!.success) { //ResponseLogin의 success가 true인 경우 -> 로그인
+                        if (response.body()!!.success) { //RequestSignUp의 success가 true인 경우 -> 회원가입
                             startActivity(Intent(this@SignUpActivity, SignInActivity::class.java))
                             finish()
                         }
