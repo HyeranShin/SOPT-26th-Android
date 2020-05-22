@@ -11,10 +11,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        if(SharedPreferenceController.getAutoLoginFlag(this)) {
-            showToast("자동 로그인 상태입니다.")
-        }
-
         main_viewPager.adapter = MainPagerAdapter(supportFragmentManager)
         main_viewPager.offscreenPageLimit = 2
         main_viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {

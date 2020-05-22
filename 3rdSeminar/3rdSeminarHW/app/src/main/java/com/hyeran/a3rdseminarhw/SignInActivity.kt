@@ -16,9 +16,6 @@ class SignInActivity : AppCompatActivity() {
 
     private val requestToServer = RequestToServer //싱글톤 그대로 가져옴
 
-    private val SIGNUP_REQUEST: Int = 1
-    private val SIGNUP_SUCCESS: Int = 200
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
