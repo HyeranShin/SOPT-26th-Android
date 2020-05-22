@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.hyeran.a3rdseminarhw.common.SharedPreferenceController
+import com.hyeran.a3rdseminarhw.common.showToast
 import kotlinx.android.synthetic.main.fragment_my_page.*
 
 class MyPageFragment : Fragment() {

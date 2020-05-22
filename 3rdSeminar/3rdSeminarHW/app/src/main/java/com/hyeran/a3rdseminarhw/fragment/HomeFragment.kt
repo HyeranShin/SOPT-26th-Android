@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.hyeran.a3rdseminarhw.insta_rv.InstaAdapter
+import com.hyeran.a3rdseminarhw.insta_rv.InstaData
+import com.hyeran.a3rdseminarhw.insta_rv.ItemDecoration
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
@@ -22,8 +25,13 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        instaAdapter = InstaAdapter(view.context)
-        rv_home.addItemDecoration(ItemDecoration(context!!))
+        instaAdapter =
+            InstaAdapter(view.context)
+        rv_home.addItemDecoration(
+            ItemDecoration(
+                context!!
+            )
+        )
         rv_home.adapter = instaAdapter //리사이클러뷰의 어댑터를 instaAdapter로 지정
         loadDatas() //데이터를 임의로 생성하고 어댑터에 전달
     }
